@@ -1,0 +1,43 @@
+{{!< layout}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2>Employee List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Department</th>
+                <th>Start Date</th>
+                <th>Job Title</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each employees}}
+            <tr>
+                <td>{{this.firstName}}</td>
+                <td>{{this.lastName}}</td>
+                <td>{{this.department}}</td>
+                <td>{{this.startDate}}</td>
+                <td>{{this.jobTitle}}</td>
+                <td>$ {{this.salary}}</td>
+                <td>
+                    <a href="/update/{{this._id}}">Update</a> |                    
+                    <a href="/delete/{{this._id}}">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

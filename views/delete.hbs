@@ -1,0 +1,27 @@
+{{!< layout}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2>Delete Employee</h2>
+    <h3>Are you sure you want to delete this employee?</h3>
+    <p><strong>Employee Details:</strong></p>
+    <p><strong>First Name:</strong> {{employee.firstName}}</p>
+    <p><strong>Last Name:</strong> {{employee.lastName}}</p>
+    <p><strong>Department: </strong>{{employee.department}}</p>
+    <p><strong>Start Date:</strong> {{employee.startDate}}</p>
+    <p><strong>Job Title:</strong> {{employee.jobTitle}}</p>
+    <p><strong>Salary: $</strong>{{employee.salary}}</p>
+
+    <form action="/delete/{{employee._id}}" method="post">
+        <button type="submit">Yes, Delete</button>
+        <a href="/view">Cancel</a>
+    </form>
+</body>
+</html>
