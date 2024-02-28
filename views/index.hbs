@@ -1,4 +1,4 @@
-{{!< layout}}
+{{!< header}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,35 +9,57 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h2>New Employee</h2>
     <form action="/view" method="post">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required><br>
-        
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required><br>
-        
-        <label for="department">Department:</label>
-        <select id="department" name="department" required>
-            <option value="IT">IT</option>
-            <option value="HR">HR</option>
-            <option value="Finance">Finance</option>
-            <option value="Sales">Sales</option>
-            <option value="Operations">Operations</option>
-            <option value="Legal">Legal</option>            
-        </select>
-        <br>
-        
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" required>
-        <br>        
-        <label for="jobTitle">Job Title:</label>
-        <input type="text" id="jobTitle" name="jobTitle" required>
-        <br>        
-        <label for="salary">Salary:</label>
-        <input type="number" id="salary" name="salary" required>
-        <br>        
-        <button type="submit">Submit</button>
+    
+        <div class="card mt-4">
+            <div class="card-header fs-4 fw-bold">Add New Employee</div>
+
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-6 pb-3">
+                        <label class="form-label fw-semibold" for="firstName">First Name:</label>
+                        <input class="form-control" type="text" id="firstName" name="firstName" required>
+                    </div>            
+                    <div class="col-6 pb-3">
+                        <label class="form-label fw-semibold" for="lastName">Last Name:</label>
+                        <input class="form-control" type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 pb-3">
+                        <label class="form-label fw-semibold" for="department">Department:</label>
+                        <select class="form-control" id="department" name="department" required>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Operations">Operations</option>
+                            <option value="Legal">Legal</option>            
+                        </select>
+                    </div>
+                    <div class="col-6 pb-3">
+                        <label class="form-label fw-semibold" for="jobTitle">Job Title:</label>
+                        <input class="form-control" type="text" id="jobTitle" name="jobTitle" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 pb-3">
+                        <label class="form-label fw-semibold" for="startDate">Start Date:</label>
+                        <input class="form-control" type="date" id="startDate" name="startDate" required>
+                    </div>
+                    <div class="col-6 pb-3">
+                        <label class="form-label fw-semibold" for="salary">Salary:</label>
+                        <input class="form-control" type="number" id="salary" name="salary" required>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary mt-3" type="submit">Add</button>
+
+            </div>
+        </div>
     </form>
 </body>
 </html>

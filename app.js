@@ -7,30 +7,21 @@ const hbs = require('hbs');
 const path = require('path'); 
 const app = express();
 
-// Set Handlebars as the view engine
 app.set('view engine', 'hbs');
-
-// Set the path to the views directory
 app.set('views', path.join(__dirname, 'views'));
-
-// Register Handlebars partials
-//NOT WORKING: hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
-
-// Register a middleware to use the layout template
 app.engine('hbs', hbs.__express);
 app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-
 hbs.registerHelper('eq', function (a, b) {
     return a === b;
 });
 
-hbs.registerHelper('formatDate', function (date) {
-    // Format the date 'YYYY-MM-DD' 
-    return date.toISOString().split('T')[0];
-});
+hbs.registerHelper('formatDate', function(passedDate) {  
+    return passedDate.toISOString().split('T')[0];   
+  });
+  
 
 // Defines employee schema
 const employeeSchema = new mongoose.Schema({
@@ -139,12 +130,6 @@ app.engine('hbs', hbs.express4({
   
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
-
-hbs.registerHelper('formatDate', function(passedDate) {  
-  //IF BELOW DIDN"T WORK return passedDate.toISOString().split('T')[0];
-  var rtnDate = moment(passedDate).format("MM-DD-YYYY (dddd)");
-  return new hbs.SafeString(rtnDate)
-});
 
 
 //Creates a new employee document with data from the form
